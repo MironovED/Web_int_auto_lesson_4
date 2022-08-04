@@ -1,0 +1,24 @@
+{
+  "name": "lesson_4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.5.1",
+    "jest-puppeteer": "^6.1.1",
+    "puppeteer": "^13.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MironovED/Web_int_auto_lesson_4.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MironovED/Web_int_auto_lesson_4/issues"
+  },
+  "homepage": "https://github.com/MironovED/Web_int_auto_lesson_4#readme",
+  "description": ""
+}
