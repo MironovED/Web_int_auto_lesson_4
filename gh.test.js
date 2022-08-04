@@ -16,6 +16,7 @@ describe("Github page first tests", () => {
   test("The h1 header content'", async () => {
     const firstLink = await page.$("header div div a");
     await firstLink.click();
+    await page.waitForNavigation();
     await page.waitForSelector("h1");
     const title2 = await page.title();
     expect(title2).toEqual("GitHub: Where the world builds software · GitHub");
@@ -44,6 +45,7 @@ describe("Github page second tests", () => {
   test("The title team content", async () => {
     const firstLink = await page.$("nav > ul > li:nth-child(2) > a");
     await firstLink.click("");
+    await page.waitForNavigation();
     await page.waitForSelector("h1");
     const title2 = await page.title();
     expect(title2).toEqual(
@@ -54,6 +56,7 @@ describe("Github page second tests", () => {
   test("The title Enterprise content", async () => {
     const firstLink = await page.$("nav > ul > li:nth-child(3) > a");
     await firstLink.click();
+    await page.waitForNavigation();
     await page.waitForSelector("h1");
     const title2 = await page.title();
     expect(title2).toEqual(
@@ -64,35 +67,11 @@ describe("Github page second tests", () => {
   test("The title Marketplace content", async () => {
     const firstLink = await page.$("nav > ul > li:nth-child(5) > a");
     await firstLink.click();
+    await page.waitForNavigation();
     await page.waitForSelector("h1");
     const title2 = await page.title();
     expect(title2).toEqual(
-      "GitHub Marketplace ·  to improve your workflow · GitHub"
+      "GitHub Marketplace · to improve your workflow · GitHub"
     );
   }, 60000);
 });
-
-/*
-describe("Github page second tests", () => {
-  beforeEach(async () => {
-    await page.goto("https://skills.github.com/");
-  });
-
-   
-  test("The h1 header content", async () => {
-    const actual = await page.$eval("h1", (link) => link.textContent);
-    expect(actual).toEqual("GitHub Skills");
-  }, 60000);
-
-  test("The h2 header content", async () => {
-    const actual = await page.$eval("h2", (link) => link.textContent);
-    expect(actual).toEqual("Our courses");
-  }, 60000);
-
-  test("The h3 header content", async () => {
-    const actual = await page.$eval("h3", (link) => link.textContent);
-    expect(actual).toEqual("First day on GitHub");
-  }, 60000); 
-  
-});
-*/
